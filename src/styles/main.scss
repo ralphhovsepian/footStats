@@ -1,7 +1,5 @@
-$primaryDark: #2b616d;
-$primaryLight: #F8F5F2;
-
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
 
 @mixin navbar($bg, $height, $flexdir) {
     display: flex;
@@ -25,8 +23,8 @@ body {
     background-color: #b2dbd5 !important;
     font-family: 'Roboto', sans-serif;
     color: #333;
+    overflow-x: hidden;
 }
-
 
 
 #nav-matches {
@@ -36,7 +34,7 @@ body {
 }
 
 #gamesInfo {
-    margin-top: 150px;
+    margin-top: 10px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -49,8 +47,20 @@ body {
     }
 }
 
+#leagueOption {
+    margin-top: 150px;
+}
+
 @media only screen and (min-width: 575px) {
-    #gamesInfo {
+    #gamesInfo, #leagueOption {
         margin-left: 20px;
     }
+}
+
+@media only screen and (max-width: 575px) {
+   nav {
+       button {
+           display: none !important;
+       }
+   }
 }

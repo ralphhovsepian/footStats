@@ -6,9 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>FootStats</title>
     <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-</head>
+   </head>
 <body>
  
 
@@ -23,17 +21,36 @@
 
     <ul class="nav nav-pills nav-fill" id="nav-matches">
         <li class="nav-item">
-          <a class="nav-link active" href="#" id="last-fifteen">Last 15 games</a>
-        </li>
+            <a class="nav-link active" href="#" id="home">Home</a>
+          </li>
         <li class="nav-item">
-          <a id="next-five" class="nav-link" href="#">Next 5 games</a>
+          <a class="nav-link" href="#" id="last-fifteen">Last 15 games</a>
         </li>
         <li class="nav-item">
           <a id="next-fifteen" class="nav-link" href="#">Next 15 games</a>
         </li>
       </ul>
 
+      <div class="form-group row" id="leagueOption">
+          <div class="col-md-3">
+          <select class="form-control form-control-sm" id="selectLeague">
+              <option disabled>Choose League</option>
+              <option id="4346">American Major League Soccer</option>
+              <option id="4328">English Premier League</option>
+              <option id="4334">French League 1</option>
+              <option id="4331">German Bundesliga</option>
+              <option id="4332">Italian Serie A</option>
+              <option id="4344">Portuguese Primeira Liga</option>
+              <option id="4330">Scottish Premier League</option>
+              <option id="4335">Spanish La Liga</option>
+              <option id="4339">Turkish Super Lig</option>
+            </select>
+          </div>
+        </div>
+     
+
       <div class="row" id="gamesInfo">
+          
         </div>
 
         

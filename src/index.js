@@ -1,11 +1,10 @@
 import Swal from 'sweetalert2';
+require('bootstrap/dist/css/bootstrap.css');
 
 //global variables
 const lastFifteen = document.getElementById('last-fifteen');
-const nextFive = document.getElementById('next-five');
 const nextFifteen = document.getElementById('next-fifteen');
 const gamesInfo = document.getElementById('gamesInfo');
-
 
 
 //show previous and upcoming games
@@ -15,9 +14,14 @@ async function showGames(choiceId, url) {
 
     //removes info when other option is clicked
     while (gamesInfo.firstChild) {
-        gamesInfo.removeChild(gamesInfo.firstChild)
+        gamesInfo.removeChild(gamesInfo.firstChild);
       }
-      
+
+      const selectLeague = document.getElementById('selectLeague');
+        let selected = selectLeague[selectLeague.selectedIndex].id;
+        url += selected;
+        console.log(url);
+    
     //fetching data from API
     let response = await fetch(url);
     let data = await response.json();
@@ -112,6 +116,12 @@ async function showGames(choiceId, url) {
 
 
 //on click, show last 15, next 5, next 15 games
-lastFifteen.onclick = () => console.log(showGames(lastFifteen.id, 'https://www.thesportsdb.com/api/v1/json/1/eventspastleague.php?id=4328'));
-nextFive.onclick = () => console.log(showGames(nextFive.id, 'https://www.thesportsdb.com/api/v1/json/1/eventsnext.php?id=133602'));
-nextFifteen.onclick = () => console.log(showGames(nextFifteen.id, 'https://www.thesportsdb.com/api/v1/json/1/eventsnextleague.php?id=4328'));
+lastFifteen.onclick = () => console.log(showGames(lastFifteen.id, 'https://www.thesportsdb.com/api/v1/json/1/eventspastleague.php?id='));
+nextFifteen.onclick = () => console.log(showGames(nextFifteen.id, 'https://www.thesportsdb.com/api/v1/json/1/eventsnextleague.php?id='));
+
+ //when click home button, nothing shows
+ document.getElementById('home').onclick = () => {
+    while (gamesInfo.firstChild) {
+        gamesInfo.removeChild(gamesInfo.firstChild);
+      }
+}

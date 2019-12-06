@@ -2,7 +2,7 @@
   "name": "footstats",
   "browserslist": [
     "last 1 Chrome versions"
-],
+  ],
   "version": "1.0.0",
   "description": "football stats",
   "main": "index.js",
@@ -13,6 +13,9 @@
   "author": "Ralph",
   "license": "MIT",
   "dependencies": {
+    "bootstrap": "^4.4.1",
+    "jquery": "^3.4.1",
+    "popper.js": "^1.16.0",
     "sweetalert2": "^9.4.3"
   },
   "devDependencies": {
