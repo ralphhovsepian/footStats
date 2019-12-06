@@ -1,11 +1,11 @@
-$primaryDark: rgb(54, 78, 150);
+$primaryDark: #2b616d;
 $primaryLight: #F8F5F2;
 
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
-@mixin navbar($bg, $height) {
+@mixin navbar($bg, $height, $flexdir) {
     display: flex;
-    flex-direction: row;
+    flex-direction: $flexdir;
     justify-content: center;
     align-items: center;
     background-color: $bg;
@@ -22,16 +22,26 @@ $primaryLight: #F8F5F2;
 }
 
 body {
-    background-color: $primaryLight;
+    background-color: #b2dbd5;
     font-family: 'Roboto', sans-serif;
     color: #333;
 }
 
 header {
-    @include navbar($primaryDark, 100px);
+    @include navbar($primaryDark, 100px, row);
     img {
         @include size(50px, 50px);
         margin-top: 5px;
+    }
+
+    @media only screen and (max-width: 350px) {
+        header {
+            
+            img {
+                @include size(40px, 40px);
+                margin-top: 5px;
+            }
+        }
     }
 
     input {
@@ -51,9 +61,8 @@ header {
     }
 }
 
-
 #nav-matches {
-    @include navbar(#fff, 50px);
+    @include navbar(#fff, 50px, row);
     margin-top: 100px;
 
     a {
@@ -62,9 +71,29 @@ header {
         text-decoration: none;
 
         &:hover {
-            background-color: #ccc;
+            background-color: whitesmoke;
             padding: 10px;
             border-radius: 2px;
+        }
+    }
+}
+
+#gamesInfo {
+    margin-top: 200px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    #matchInfo {
+        background-color: $primaryLight;
+        width: 250px;
+        height: 150px;
+        margin: 20px;
+        border-radius: 5px;
+        p {
+            font-size:20px;
+            font-weight: bold;
+            text-align: center;
         }
     }
 }
