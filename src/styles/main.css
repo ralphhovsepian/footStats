@@ -40,7 +40,6 @@ body {
           flex-direction: column;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  margin-left: 20px;
 }
 
 #gamesInfo .card {
@@ -50,5 +49,11 @@ body {
 
 #gamesInfo p {
   font-weight: bold;
+}
+
+@media only screen and (min-width: 575px) {
+  #gamesInfo {
+    margin-left: 20px;
+  }
 }
 /*# sourceMappingURL=main.css.map */
