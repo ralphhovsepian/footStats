@@ -6,27 +6,37 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>FootStats</title>
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </head>
 <body>
-    
-    <header>
+ 
 
-        <img src="./styles/ball.png" alt="Ball">
-        <form>
-            <input type="text" id="searchInput" name="search" placeholder="Search for any team...">
-        </form>
-    </header>
+    <nav class="navbar navbar-dark bg-dark fixed-top">
+        <span class="navbar-brand mb-0 h1">FootStats</span>
+        <form class="form-inline">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
+          </form>
+      </nav>
 
-    <div id="nav-matches">
-       
-            <a href="#" id="last-fifteen">Last 15 games</a>
-            <a href="#" id="next-five">Next 5 games</a>
-            <a href="#" id="next-fifteen">Next 15 games</a>
-    </div>
 
-    <div id="gamesInfo">
+    <ul class="nav nav-pills nav-fill" id="nav-matches">
+        <li class="nav-item">
+          <a class="nav-link active" href="#" id="last-fifteen">Last 15 games</a>
+        </li>
+        <li class="nav-item">
+          <a id="next-five" class="nav-link" href="#">Next 5 games</a>
+        </li>
+        <li class="nav-item">
+          <a id="next-fifteen" class="nav-link" href="#">Next 15 games</a>
+        </li>
+      </ul>
+
+      <div class="row" id="gamesInfo">
+        </div>
+
         
-    </div>
 
     <script src="./js/main.js"></script>
 </body>

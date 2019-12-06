@@ -1,71 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
 body {
-  background-color: #b2dbd5;
+  background-color: #b2dbd5 !important;
   font-family: 'Roboto', sans-serif;
-  color: #333;
-}
-
-header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background-color: #2b616d;
-  width: 100%;
-  height: 100px;
-  position: fixed;
-  top: 0;
-  left: 0;
-}
-
-header img {
-  width: 50px;
-  height: 50px;
-  margin-top: 5px;
-}
-
-@media only screen and (max-width: 350px) {
-  header header img {
-    width: 40px;
-    height: 40px;
-    margin-top: 5px;
-  }
-}
-
-header input {
-  width: 250px;
-  height: 40px;
-  background-color: #fff;
-  border: 2px solid #fff;
-  border-radius: 4px;
-  margin: 0 10px;
-  text-align: center;
-  color: #333;
-  outline-style: none;
-}
-
-header ::-webkit-input-placeholder {
-  color: #333;
-}
-
-header :-ms-input-placeholder {
-  color: #333;
-}
-
-header ::-ms-input-placeholder {
-  color: #333;
-}
-
-header ::placeholder {
   color: #333;
 }
 
@@ -83,54 +19,36 @@ header ::placeholder {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: #fff;
+  background-color: whitesmoke;
   width: 100%;
   height: 50px;
   position: fixed;
   top: 0;
   left: 0;
-  margin-top: 100px;
-}
-
-#nav-matches a {
-  margin-left: 40px;
-  color: #333;
-  text-decoration: none;
-}
-
-#nav-matches a:hover {
-  background-color: whitesmoke;
-  padding: 10px;
-  border-radius: 2px;
+  margin-top: 55px;
+  z-index: 1;
 }
 
 #gamesInfo {
-  margin-top: 200px;
+  margin-top: 150px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  margin-left: 20px;
 }
 
-#gamesInfo #matchInfo {
-  background-color: #F8F5F2;
-  width: 250px;
-  height: 150px;
-  margin: 20px;
-  border-radius: 5px;
+#gamesInfo .card {
+  margin: 20px 0;
+  border-left: 4px solid #5bc0de;
 }
 
-#gamesInfo #matchInfo p {
-  font-size: 20px;
+#gamesInfo p {
   font-weight: bold;
-  text-align: center;
 }
 /*# sourceMappingURL=main.css.map */
