@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
 body {
-  background-color: #b2dbd5 !important;
+  background-color: #f7f7f7 !important;
   font-family: 'Roboto', sans-serif;
   color: #333;
   overflow-x: hidden;
@@ -54,6 +54,61 @@ body {
 
 #leagueOption {
   margin-top: 150px;
+}
+
+#teams {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#teams .team {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-bottom: 6px solid #5bc0de;
+  border-radius: 6px;
+  opacity: .9;
+  padding: 20px;
+  margin: 30px;
+  cursor: pointer;
+}
+
+#teams img {
+  width: 100px;
+  height: 100px;
+}
+
+#teamInfo {
+  display: none;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-left: 30px;
+}
+
+#teamInfo img {
+  width: 150px;
+  height: 150px;
+  margin: 35px 0;
+}
+
+#teamSchedule {
+  margin: 0 auto;
+  width: 50%;
 }
 
 @media only screen and (min-width: 575px) {
