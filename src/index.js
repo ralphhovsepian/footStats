@@ -1,7 +1,7 @@
 import Swal from 'sweetalert2';
 require('bootstrap/dist/css/bootstrap.css');
 
-import {showTeams} from './searchTeams';
+import {showTeams, upcomingGames} from './searchTeams';
 
  //global variables
  const lastFifteen = document.getElementById('last-fifteen');
@@ -14,7 +14,9 @@ import {showTeams} from './searchTeams';
  //show previous and upcoming games
 async function showGames(choiceId, url) {
 
-    
+  document.getElementById('homeInfo').style.display = 'none';
+  document.getElementById('selectLeague').style.display = 'block';
+
   activeLink();
 
  teamInfo.style.display = 'none';
@@ -26,7 +28,6 @@ async function showGames(choiceId, url) {
   while (gamesInfo.firstChild) {
       gamesInfo.removeChild(gamesInfo.firstChild);
     }
-
     const selectLeague = document.getElementById('selectLeague');
       let selected = selectLeague[selectLeague.selectedIndex].id;
       url += selected;
@@ -134,6 +135,12 @@ nextFifteen.onclick = () => console.log(showGames(nextFifteen.id, 'https://www.t
 
  //when click home button, nothing shows
  document.getElementById('home').onclick = () => {
+
+    document.getElementById('teamInfo').style.display = 'none';
+    document.getElementById('teams').style.display = 'none';
+    document.getElementById('homeInfo').style.display = 'block';
+    document.getElementById('selectLeague').style.display = 'none';
+    
     while (gamesInfo.firstChild) {
         gamesInfo.removeChild(gamesInfo.firstChild);
       }

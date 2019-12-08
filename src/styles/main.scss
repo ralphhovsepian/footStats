@@ -51,6 +51,18 @@ body {
     margin-top: 150px;
 }
 
+#selectLeague {
+    display: none;
+}
+
+#homeInfo {
+    text-align: center;
+    img {
+        @include size(200px, 200px);
+    }
+}
+
+
 #teams {
     display: flex;
     flex-direction: row;

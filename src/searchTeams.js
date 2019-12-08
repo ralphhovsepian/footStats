@@ -12,11 +12,12 @@ const stadium = document.getElementById('stadium');
 const jersey = document.getElementById('jersey');
 
 
-    //hide last,next games info and show searched teams
+    //hide homeinfo, last,next games info and show searched teams
       teams.style.display = 'flex';
       gamesInfo.style.display = 'none';
       teamInfo.style.display = 'none';
-  
+      document.getElementById('homeInfo').style.display = 'none';
+      
       //removes info when other value is searched
       while (teams.firstChild) {
         teams.removeChild(teams.firstChild);
@@ -59,6 +60,8 @@ const jersey = document.getElementById('jersey');
             league.innerHTML = `<b>League:</b><br>${team.strLeague}`;
             stadium.innerHTML = `<b>League:</b><br>${team.strStadium}`;
             jersey.src = team.strTeamJersey;
+
+            upcomingGames(team.idTeam);
           }
   
       });
@@ -66,4 +69,43 @@ const jersey = document.getElementById('jersey');
    }
   
   
+
+   export async function upcomingGames(teamId) {
+     
+    document.getElementById('homeInfo').style.display = 'none';
+    const scheduleBody = document.getElementById('scheduleBody');
+
+    //removes info when other value is searched
+    while (scheduleBody.firstChild) {
+      scheduleBody.removeChild(scheduleBody.firstChild);
+    }
+        let response = await fetch(`https://www.thesportsdb.com/api/v1/json/1/eventsnext.php?id=${teamId}`);
+        let data = await response.json();
+        console.log(data);
+
+
+        data.events.forEach(data => {
+
+          const tr = document.createElement('tr');
+          scheduleBody.appendChild(tr);
+  
+          const th = document.createElement('th');
+          th.scope = 'row';
+          th.innerHTML = `<i class="fa fa-calendar" aria-hidden="true"></i> ${data.dateEvent}`;
+          tr.appendChild(th);
+
+
+          const scheduleInfo = [data.strHomeTeam, data.strAwayTeam, data.strTime];
+
+          for(let i= 0; i < scheduleInfo.length; i++) {
+            const td = document.createElement('td');
+            td.innerHTML = scheduleInfo[i];
+            tr.appendChild(td); 
+          }
+
+        });
+       
+
+
+   }
   
