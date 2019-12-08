@@ -4,9 +4,8 @@ require('bootstrap');
 import {showTeams, upcomingGames} from './searchTeams';
 
  //global variables
- const home = document.querySelectorAll('.home');
- const lastFifteen = document.querySelectorAll('.last-fifteen');
- const nextFifteen = document.querySelectorAll('.next-fifteen');
+ const lastFifteen = document.getElementById('last-fifteen');
+ const nextFifteen = document.getElementById('next-fifteen');
  const searchForm = document.getElementById('searchForm');
  const searchInput = document.getElementById('searchInput');
  const gamesInfo = document.getElementById('gamesInfo');
@@ -15,15 +14,14 @@ import {showTeams, upcomingGames} from './searchTeams';
  //show previous and upcoming games
 async function showGames(choiceId, url) {
 
+  
   document.getElementById('homeInfo').style.display = 'none';
   document.getElementById('selectLeague').style.display = 'block';
-
-  activeLink();
-
- teamInfo.style.display = 'none';
- teams.style.display = 'none';
- gamesInfo.style.display = 'block';
-
+  teamInfo.style.display = 'none';
+  teams.style.display = 'none';
+  gamesInfo.style.display = 'block';
+ 
+ activeLink();
 
   //removes info when other option is clicked
   while (gamesInfo.firstChild) {
@@ -131,15 +129,11 @@ export const activeLink = () => {
 searchForm.onsubmit = () => console.log(showTeams());
 
 //on click, show last 15, next 5, next 15 games
-lastFifteen[0].onclick = () => console.log(showGames(lastFifteen.id, 'https://www.thesportsdb.com/api/v1/json/1/eventspastleague.php?id='));
-lastFifteen[1].onclick = () => console.log(showGames(lastFifteen.id, 'https://www.thesportsdb.com/api/v1/json/1/eventspastleague.php?id='));
-nextFifteen[0].onclick = () => console.log(showGames(nextFifteen.id, 'https://www.thesportsdb.com/api/v1/json/1/eventsnextleague.php?id='));
-nextFifteen[1].onclick = () => console.log(showGames(nextFifteen.id, 'https://www.thesportsdb.com/api/v1/json/1/eventsnextleague.php?id='));
-home[0].onclick = () => { homeDisplay(); };
-home[1].onclick = () => { homeDisplay(); };
+lastFifteen.onclick = () => console.log(showGames(lastFifteen.id, 'https://www.thesportsdb.com/api/v1/json/1/eventspastleague.php?id='));
+nextFifteen.onclick = () => console.log(showGames(nextFifteen.id, 'https://www.thesportsdb.com/api/v1/json/1/eventsnextleague.php?id='));
 
- //when click home button, nothing shows
- const homeDisplay = () => {
+
+document.getElementById('home').onclick = () => {
   document.getElementById('teamInfo').style.display = 'none';
   document.getElementById('teams').style.display = 'none';
   document.getElementById('homeInfo').style.display = 'block';
@@ -148,4 +142,5 @@ home[1].onclick = () => { homeDisplay(); };
   while (gamesInfo.firstChild) {
       gamesInfo.removeChild(gamesInfo.firstChild);
     }
- }
+ 
+}

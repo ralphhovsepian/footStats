@@ -17,7 +17,7 @@ const jersey = document.getElementById('jersey');
       gamesInfo.style.display = 'none';
       teamInfo.style.display = 'none';
       document.getElementById('homeInfo').style.display = 'none';
-      
+
       //removes info when other value is searched
       while (teams.firstChild) {
         teams.removeChild(teams.firstChild);

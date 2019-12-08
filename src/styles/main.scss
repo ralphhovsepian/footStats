@@ -114,16 +114,7 @@ body {
 }
 
 @media only screen and (max-width: 400px) {
-    #nav-matches {
-       display: none;
-    }
-    #nav-mobile {
-        margin-top: 100px;
-        display: block;
-    }
-    nav {
-        flex-direction: column;
-    }
+   
     #teamIntro {
         margin: 0 auto;
     }
