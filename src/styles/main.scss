@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
-
+ 
 
 @mixin navbar($bg, $height, $flexdir) {
     display: flex;
@@ -97,7 +97,6 @@ body {
 
 #teamSchedule {
     margin: 0 auto;
-    width: 50%;
 }
 
 @media only screen and (min-width: 575px) {
@@ -112,4 +111,24 @@ body {
            display: none !important;
        }
    }
+}
+
+@media only screen and (max-width: 400px) {
+    #nav-matches {
+       display: none;
+    }
+    #nav-mobile {
+        margin-top: 100px;
+        display: block;
+    }
+    nav {
+        flex-direction: column;
+    }
+    #teamIntro {
+        margin: 0 auto;
+    }
+   
+    #teamInfo {
+        margin: 0;
+    }
 }

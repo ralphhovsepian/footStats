@@ -1,11 +1,12 @@
 import Swal from 'sweetalert2';
 require('bootstrap/dist/css/bootstrap.css');
-
+require('bootstrap');
 import {showTeams, upcomingGames} from './searchTeams';
 
  //global variables
- const lastFifteen = document.getElementById('last-fifteen');
- const nextFifteen = document.getElementById('next-fifteen');
+ const home = document.querySelectorAll('.home');
+ const lastFifteen = document.querySelectorAll('.last-fifteen');
+ const nextFifteen = document.querySelectorAll('.next-fifteen');
  const searchForm = document.getElementById('searchForm');
  const searchInput = document.getElementById('searchInput');
  const gamesInfo = document.getElementById('gamesInfo');
@@ -130,18 +131,21 @@ export const activeLink = () => {
 searchForm.onsubmit = () => console.log(showTeams());
 
 //on click, show last 15, next 5, next 15 games
-lastFifteen.onclick = () => console.log(showGames(lastFifteen.id, 'https://www.thesportsdb.com/api/v1/json/1/eventspastleague.php?id='));
-nextFifteen.onclick = () => console.log(showGames(nextFifteen.id, 'https://www.thesportsdb.com/api/v1/json/1/eventsnextleague.php?id='));
+lastFifteen[0].onclick = () => console.log(showGames(lastFifteen.id, 'https://www.thesportsdb.com/api/v1/json/1/eventspastleague.php?id='));
+lastFifteen[1].onclick = () => console.log(showGames(lastFifteen.id, 'https://www.thesportsdb.com/api/v1/json/1/eventspastleague.php?id='));
+nextFifteen[0].onclick = () => console.log(showGames(nextFifteen.id, 'https://www.thesportsdb.com/api/v1/json/1/eventsnextleague.php?id='));
+nextFifteen[1].onclick = () => console.log(showGames(nextFifteen.id, 'https://www.thesportsdb.com/api/v1/json/1/eventsnextleague.php?id='));
+home[0].onclick = () => { homeDisplay(); };
+home[1].onclick = () => { homeDisplay(); };
 
  //when click home button, nothing shows
- document.getElementById('home').onclick = () => {
-
-    document.getElementById('teamInfo').style.display = 'none';
-    document.getElementById('teams').style.display = 'none';
-    document.getElementById('homeInfo').style.display = 'block';
-    document.getElementById('selectLeague').style.display = 'none';
-    
-    while (gamesInfo.firstChild) {
-        gamesInfo.removeChild(gamesInfo.firstChild);
-      }
-}
+ const homeDisplay = () => {
+  document.getElementById('teamInfo').style.display = 'none';
+  document.getElementById('teams').style.display = 'none';
+  document.getElementById('homeInfo').style.display = 'block';
+  document.getElementById('selectLeague').style.display = 'none';
+  
+  while (gamesInfo.firstChild) {
+      gamesInfo.removeChild(gamesInfo.firstChild);
+    }
+ }

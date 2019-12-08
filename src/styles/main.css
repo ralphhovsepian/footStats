@@ -121,7 +121,6 @@ body {
 
 #teamSchedule {
   margin: 0 auto;
-  width: 50%;
 }
 
 @media only screen and (min-width: 575px) {
@@ -133,6 +132,28 @@ body {
 @media only screen and (max-width: 575px) {
   nav button {
     display: none !important;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  #nav-matches {
+    display: none;
+  }
+  #nav-mobile {
+    margin-top: 100px;
+    display: block;
+  }
+  nav {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #teamIntro {
+    margin: 0 auto;
+  }
+  #teamInfo {
+    margin: 0;
   }
 }
 /*# sourceMappingURL=main.css.map */

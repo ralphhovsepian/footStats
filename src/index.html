@@ -22,16 +22,28 @@
 
     <ul class="nav nav-pills nav-fill" id="nav-matches">
         <li class="nav-item">
-            <a class="nav-link active" href="#" id="home">Home</a>
+            <a class="nav-link active home" href="#" id="home">Home</a>
           </li>
         <li class="nav-item">
-          <a class="nav-link" href="#" id="last-fifteen">Last 15 games</a>
+          <a class="nav-link last-fifteen" href="#" id="last-fifteen">Last 15 games</a>
         </li>
         <li class="nav-item">
-          <a id="next-fifteen" class="nav-link" href="#">Next 15 games</a>
+          <a id="next-fifteen" class="nav-link next-fifteen" href="#">Next 15 games</a>
         </li>
       </ul>
 
+      
+      <div class="dropdown show" id="nav-mobile">
+        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Matches
+        </a>
+      
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <a class="dropdown-item home" href="#" id="home">Home</a>
+          <a class="dropdown-item last-fifteen" href="#" id="last-fifteen">Last 15 games</a>
+          <a class="dropdown-item next-fifteen" href="#" id="next-fifteen">Next 15 games</a>
+        </div>
+      </div>
 
 
       <div class="form-group row" id="leagueOption">
